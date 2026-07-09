@@ -93,6 +93,7 @@ p { color: var(--muted); line-height: 1.72; }
 .rating-card small { display: block; color: var(--muted); margin-top: 6px; }
 .hero-image-card { min-height: 360px; padding: 26px; display: grid; align-content: end; gap: 12px; background: linear-gradient(145deg, rgba(31,19,13,0.3), rgba(31,19,13,0.9)), radial-gradient(circle at top left, #e5b66d, #3b2416 55%, #1f130d); }
 .hero-image-card span { width: fit-content; padding: 9px 13px; border-radius: 999px; color: var(--cream); background: rgba(255,255,255,0.14); border: 1px solid rgba(255,255,255,0.18); font-weight: 800; }
+.photo-card { background-size: cover; background-position: center; }
 
 .split-section { display: grid; grid-template-columns: 0.85fr 1.15fr; gap: clamp(28px, 6vw, 72px); }
 .section-copy { font-size: 1.03rem; }
@@ -117,17 +118,13 @@ p { color: var(--muted); line-height: 1.72; }
 
 .gallery-section { background: var(--paper); }
 .gallery-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
-.gallery-card { min-height: 280px; overflow: hidden; box-shadow: none; }
+.gallery-card { min-height: 300px; overflow: hidden; box-shadow: none; }
 .gallery-card--wide { grid-column: span 2; }
-.gallery-placeholder {
-  height: 100%;
-  min-height: 280px;
-  padding: 28px;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  background: linear-gradient(145deg, rgba(31,19,13,0.25), rgba(31,19,13,0.85)), radial-gradient(circle at top left, #edbf7f, #835834 60%, #2b1a12);
-}
+.gallery-photo { position: relative; display: flex; align-items: flex-end; padding: 24px; background-size: cover; background-position: center; }
+.gallery-caption { width: 100%; padding: 18px; border-radius: 22px; background: rgba(31, 19, 13, 0.72); backdrop-filter: blur(10px); }
+.gallery-caption span { color: var(--cream); font-size: 1.2rem; font-weight: 900; }
+.gallery-caption p { color: rgba(255,248,237,0.9); margin: 8px 0 0; line-height: 1.45; }
+.gallery-placeholder { height: 100%; min-height: 280px; padding: 28px; display: flex; flex-direction: column; justify-content: flex-end; background: linear-gradient(145deg, rgba(31,19,13,0.25), rgba(31,19,13,0.85)), radial-gradient(circle at top left, #edbf7f, #835834 60%, #2b1a12); }
 .gallery-placeholder span { color: var(--cream); font-size: 1.5rem; font-weight: 800; margin-bottom: 10px; }
 .gallery-placeholder p { color: rgba(255,248,237,0.9); margin-bottom: 0; }
 .gallery-cta { display: flex; justify-content: center; margin-top: 28px; }
