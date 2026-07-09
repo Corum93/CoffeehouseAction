@@ -1,0 +1,11 @@
+:root{
+  --coffee:#c83a30;
+  --espresso:#8f211b;
+  --caramel:#d94b3f;
+  --gold:#f4c18b;
+  --latte:#f8dfd7;
+}
+
+.hero{background:linear-gradient(135deg,#fff8ed,#fbe4dc)}
+.coffee-section{background:linear-gradient(180deg,#fffdf8,#fbe4dc)}
+.gallery-caption{background:rgba(143,33,27,.74)}
