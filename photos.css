@@ -1,9 +1,6 @@
-/* Real cafe photos will be embedded here in the next pass. */
-.photo-storefront,
-.photo-latte-menu,
-.photo-iced-drink,
-.photo-service,
-.photo-cake,
-.photo-breakfast {
-  background-image: linear-gradient(145deg, rgba(31,19,13,.18), rgba(31,19,13,.62));
-}
+.photo-storefront{background-image:url('images/photos/storefront.svg')}
+.photo-latte-menu{background-image:url('images/photos/latte-menu.svg')}
+.photo-iced-drink{background-image:url('images/photos/iced-drink.svg')}
+.photo-cake{background-image:url('images/photos/cake.svg')}
+.photo-service{background-image:radial-gradient(circle at top left,#b47a3c,#3b2416 62%,#1f130d)}
+.photo-breakfast{background-image:radial-gradient(circle at top left,#d5a35f,#9a5b31 55%,#3b2416)}
