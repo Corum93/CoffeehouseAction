@@ -6,6 +6,26 @@
   --latte:#f8dfd7;
 }
 
-.hero{background:linear-gradient(135deg,#fff8ed,#fbe4dc)}
+.site-header{padding:14px clamp(20px,4vw,52px)}
+.site-nav{gap:18px}
+.nav-cta{min-width:auto;padding:0 24px;color:#fff8ed!important;background:#c83a30!important}
+.nav-cta::before{content:'Tripadvisor Review'}
+.nav-cta{font-size:0;color:transparent!important}
+.nav-cta::before{font-size:1rem;color:#fff8ed}
+.hero{min-height:calc(100vh - 76px);padding-top:70px;padding-bottom:70px;background:linear-gradient(135deg,#fff8ed,#fbe4dc)}
+.hero{grid-template-columns:minmax(0,1fr) minmax(360px,.72fr);align-items:center}
+h1{font-size:clamp(3.4rem,6.3vw,6.4rem);line-height:.95;max-width:760px;margin-bottom:22px}
+.hero-text{font-size:1.08rem;max-width:590px}
+.hero-card{align-self:center;margin-top:28px}
+.rating-card{padding:20px;border-radius:24px}
+.rating-score{width:76px;height:76px;font-size:1.9rem;border-radius:22px}
+.hero-image-card{min-height:330px}
 .coffee-section{background:linear-gradient(180deg,#fffdf8,#fbe4dc)}
 .gallery-caption{background:rgba(143,33,27,.74)}
+
+@media(max-width:900px){
+  .nav-cta{width:100%}
+  .hero{padding-top:56px;padding-bottom:56px;grid-template-columns:1fr}
+  h1{font-size:clamp(3rem,13vw,5.2rem)}
+  .hero-card{margin-top:0}
+}
