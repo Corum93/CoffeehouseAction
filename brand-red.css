@@ -17,8 +17,10 @@ h1{font-size:clamp(3.4rem,6.3vw,6.4rem);line-height:.95;max-width:760px;margin-b
 .rating-score{width:76px;height:76px;font-size:1.9rem;border-radius:22px}
 .hero-image-card{min-height:330px}
 #about.section-pad{padding-bottom:48px!important}
-#menu.section-pad{padding-top:56px!important}
-#menu .section-heading{margin-bottom:32px!important}
+#menu.section-pad{padding-top:56px!important;padding-bottom:46px!important}
+#menu .section-heading{margin-bottom:30px!important}
+#coffee-types.section-pad{padding-top:54px!important}
+#coffee-types .section-heading{margin-bottom:34px!important}
 .coffee-section{background:#fbe4dc}
 .gallery-caption{background:rgba(143,33,27,.74)}
-@media(max-width:900px){.nav-cta{width:100%}.hero{padding-top:56px;padding-bottom:56px;grid-template-columns:1fr}h1{font-size:clamp(3rem,13vw,5.2rem)}.hero-card{margin-top:0}#about.section-pad{padding-bottom:36px!important}#menu.section-pad{padding-top:42px!important}}
+@media(max-width:900px){.nav-cta{width:100%}.hero{padding-top:56px;padding-bottom:56px;grid-template-columns:1fr}h1{font-size:clamp(3rem,13vw,5.2rem)}.hero-card{margin-top:0}#about.section-pad{padding-bottom:36px!important}#menu.section-pad{padding-top:42px!important;padding-bottom:34px!important}#coffee-types.section-pad{padding-top:40px!important}}
