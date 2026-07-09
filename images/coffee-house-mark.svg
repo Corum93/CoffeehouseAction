@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" role="img" aria-labelledby="title desc">
+  <title id="title">The Coffee House Acton logo mark</title>
+  <desc id="desc">A red circular coffee cup mark for The Coffee House Acton</desc>
+  <defs>
+    <linearGradient id="brandRed" x1="20" y1="10" x2="100" y2="110" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#de3d34"/>
+      <stop offset="1" stop-color="#b7221c"/>
+    </linearGradient>
+  </defs>
+  <circle cx="60" cy="60" r="58" fill="url(#brandRed)"/>
+  <path fill="#fff8ed" d="M37 55h45c-1 19-12 31-30 31-16 0-27-11-30-31h15Zm44 6h8c7 0 11 4 11 10s-4 10-11 10h-8v-8h7c3 0 5-1 5-3s-2-3-5-3h-7v-6Z"/>
+  <path fill="none" stroke="#fff8ed" stroke-width="6" stroke-linecap="round" d="M39 90h39"/>
+  <path fill="none" stroke="#fff8ed" stroke-width="5" stroke-linecap="round" d="M48 43c-6-8 4-14 1-22M62 43c-6-8 5-15 1-24M75 43c-5-7 4-13 2-20"/>
+</svg>
