@@ -15,6 +15,21 @@ if (navToggle && siteNav) {
   });
 }
 
+function addOtherBusinessBanner() {
+  if (document.querySelector('.other-business-banner')) return;
+  const footer = document.querySelector('.site-footer');
+  if (!footer) return;
+
+  const banner = document.createElement('aside');
+  banner.className = 'other-business-banner';
+  banner.setAttribute('aria-label', 'Visit our other business');
+  banner.innerHTML = `
+    <p><strong>Love The Toll House?</strong><br />Please visit our other business, Toll House Deli.</p>
+    <a href="https://www.tollhousedeli.co.uk/" target="_blank" rel="noopener">Visit Toll House Deli</a>
+  `;
+  footer.parentNode.insertBefore(banner, footer);
+}
+
 const COOKIE_KEY = 'coffeeHouseCookieConsent';
 
 function injectCookieStyles() {
@@ -180,7 +195,7 @@ function createCookieConsent() {
   banner.setAttribute('aria-label', 'Cookie consent');
   banner.innerHTML = `
     <div>
-      <h2>Cookies on The Coffee House Acton</h2>
+      <h2>Cookies on The Toll House Acton</h2>
       <p>We use necessary cookies to make this website work. With your permission, we may also use optional cookies to understand visits and improve the site.</p>
     </div>
     <div class="cookie-actions">
@@ -276,8 +291,13 @@ function createCookieConsent() {
   }
 }
 
-if (document.readyState === 'loading') {
-  document.addEventListener('DOMContentLoaded', createCookieConsent);
-} else {
+function initialisePageEnhancements() {
+  addOtherBusinessBanner();
   createCookieConsent();
+}
+
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', initialisePageEnhancements);
+} else {
+  initialisePageEnhancements();
 }
