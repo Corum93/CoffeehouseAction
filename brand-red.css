@@ -5,6 +5,7 @@
   --gold:#cfeeff;
   --latte:#eaf7ff;
 }
+.cookie-settings-trigger{display:none!important}
 .site-header{padding:14px clamp(20px,4vw,52px)}
 .site-nav{gap:18px}
 .nav-cta{min-width:auto;padding:0 24px;color:#111!important;background:#8fd3ff!important;font-size:1rem!important;white-space:nowrap}
