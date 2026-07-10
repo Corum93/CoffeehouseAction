@@ -10,13 +10,14 @@
 .nav-cta{min-width:auto;padding:0 24px;color:#111!important;background:#8fd3ff!important;font-size:1rem!important;white-space:nowrap}
 .hero{min-height:calc(100vh - 76px);padding-top:70px;padding-bottom:70px;background:linear-gradient(135deg,#fff,#dff3ff)}
 .hero{grid-template-columns:minmax(0,1fr) minmax(360px,.72fr);align-items:center}
+.hero.section-pad{padding-bottom:28px!important}
 h1{font-size:clamp(3.4rem,6.3vw,6.4rem);line-height:.95;max-width:760px;margin-bottom:22px}
 .hero-text{font-size:1.08rem;max-width:590px}
 .hero-card{align-self:center;margin-top:28px}
 .rating-card{padding:20px;border-radius:24px}
 .rating-score{width:76px;height:76px;font-size:1.9rem;border-radius:22px}
 .hero-image-card{min-height:330px}
-#about.section-pad{padding-bottom:48px!important}
+#about.section-pad{padding-top:34px!important;padding-bottom:48px!important}
 #about h2{font-size:0!important}
 #about h2::after{content:"A cosy cafe for proper food, friendly service, everyday moments and getting a little work done.";display:block;font-size:clamp(2.2rem,5vw,4.6rem);line-height:.98;letter-spacing:-.04em;color:#111}
 #menu.section-pad{padding-top:56px!important;padding-bottom:46px!important}
@@ -51,9 +52,10 @@ h1{font-size:clamp(3.4rem,6.3vw,6.4rem);line-height:.95;max-width:760px;margin-b
 @media(max-width:900px){
   .nav-cta{width:100%}
   .hero{padding-top:56px;padding-bottom:56px;grid-template-columns:1fr}
+  .hero.section-pad{padding-bottom:24px!important}
   h1{font-size:clamp(3rem,13vw,5.2rem)}
   .hero-card{margin-top:0}
-  #about.section-pad{padding-bottom:36px!important}
+  #about.section-pad{padding-top:28px!important;padding-bottom:36px!important}
   #menu.section-pad{padding-top:42px!important;padding-bottom:34px!important}
   #coffee-types.section-pad{padding-top:40px!important}
   #reviews .review-panel h2{font-size:clamp(2.8rem,8vw,4.4rem)!important}
@@ -62,6 +64,8 @@ h1{font-size:clamp(3.4rem,6.3vw,6.4rem);line-height:.95;max-width:760px;margin-b
 }
 
 @media(max-width:640px){
+  .hero.section-pad{padding-bottom:18px!important}
+  #about.section-pad{padding-top:22px!important}
   #about h2::after{font-size:clamp(2.25rem,12vw,3.4rem)}
   #reviews .review-panel{padding:26px!important}
   #reviews .review-panel h2{font-size:clamp(2.35rem,12vw,3.35rem)!important}
