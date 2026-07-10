@@ -1,26 +1,40 @@
 :root{
-  --coffee:#c83a30;
-  --espresso:#8f211b;
-  --caramel:#d94b3f;
-  --gold:#f4c18b;
-  --latte:#f8dfd7;
+  --coffee:#8fd3ff;
+  --espresso:#111111;
+  --caramel:#5bbcf2;
+  --gold:#cfeeff;
+  --latte:#eaf7ff;
+  --cream:#ffffff;
+  --paper:#ffffff;
+  --text:#111111;
+  --muted:#4a4a4a;
+  --line:rgba(17,17,17,.12);
 }
-.site-header{padding:14px clamp(20px,4vw,52px)}
+body{background:#ffffff;color:#111111}
+.site-header{padding:14px clamp(20px,4vw,52px);background:rgba(255,255,255,.94)}
 .site-nav{gap:18px}
-.nav-cta{min-width:auto;padding:0 24px;color:white!important;background:#c83a30!important;font-size:1rem!important;white-space:nowrap}
-.hero{min-height:calc(100vh - 76px);padding-top:70px;padding-bottom:70px;background:#fbe4dc}
+.site-nav a{color:#111111}
+.nav-cta{min-width:auto;padding:0 24px;color:#111111!important;background:#8fd3ff!important;font-size:1rem!important;white-space:nowrap}
+.hero{min-height:calc(100vh - 76px);padding-top:70px;padding-bottom:70px;background:linear-gradient(135deg,#ffffff,#dff3ff)}
 .hero{grid-template-columns:minmax(0,1fr) minmax(360px,.72fr);align-items:center}
-h1{font-size:clamp(3.4rem,6.3vw,6.4rem);line-height:.95;max-width:760px;margin-bottom:22px}
-.hero-text{font-size:1.08rem;max-width:590px}
+h1{font-size:clamp(3.4rem,6.3vw,6.4rem);line-height:.95;max-width:760px;margin-bottom:22px;color:#111111}
+h2,h3{color:#111111}
+.hero-text{font-size:1.08rem;max-width:590px;color:#4a4a4a}
 .hero-card{align-self:center;margin-top:28px}
 .rating-card{padding:20px;border-radius:24px}
-.rating-score{width:76px;height:76px;font-size:1.9rem;border-radius:22px}
+.rating-score{width:76px;height:76px;font-size:1.9rem;border-radius:22px;background:#8fd3ff;color:#111111}
 .hero-image-card{min-height:330px}
+.button.primary{background:#8fd3ff;color:#111111}
+.button.secondary{background:#eaf7ff;color:#111111}
+.button.ghost{color:#111111;border-color:rgba(17,17,17,.12);background:#ffffff}
+.eyebrow{color:#2589c8}
 #about.section-pad{padding-bottom:48px!important}
 #menu.section-pad{padding-top:56px!important;padding-bottom:46px!important}
 #menu .section-heading{margin-bottom:30px!important}
 #coffee-types.section-pad{padding-top:54px!important}
 #coffee-types .section-heading{margin-bottom:34px!important}
-.coffee-section{background:#fbe4dc}
-.gallery-caption{background:rgba(143,33,27,.74)}
+.coffee-section{background:#eaf7ff}
+.gallery-section,.menu-section{background:#ffffff}
+.gallery-caption{background:rgba(17,17,17,.76)}
+.site-footer{background:#111111;color:#ffffff}
 @media(max-width:900px){.nav-cta{width:100%}.hero{padding-top:56px;padding-bottom:56px;grid-template-columns:1fr}h1{font-size:clamp(3rem,13vw,5.2rem)}.hero-card{margin-top:0}#about.section-pad{padding-bottom:36px!important}#menu.section-pad{padding-top:42px!important;padding-bottom:34px!important}#coffee-types.section-pad{padding-top:40px!important}}
