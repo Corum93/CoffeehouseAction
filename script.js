@@ -94,6 +94,10 @@ function addGoogleMap() {
   document.head.appendChild(style);
 }
 
+function removeRedundantGoogleMapsButton() {
+  document.querySelector('.visit-actions a[href*="google.com/maps"]')?.remove();
+}
+
 const COOKIE_KEY = 'coffeeHouseCookieConsent';
 
 function getCookieConsent() {
@@ -189,6 +193,7 @@ function createCookieConsent() {
 function initialisePageEnhancements() {
   addOtherBusinessBanner();
   addGoogleReviewsButton();
+  removeRedundantGoogleMapsButton();
   addGoogleMap();
   createCookieConsent();
 }
