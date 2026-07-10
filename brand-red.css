@@ -5,7 +5,6 @@
   --gold:#cfeeff;
   --latte:#eaf7ff;
 }
-.cookie-settings-trigger{display:none!important}
 .site-header{padding:14px clamp(20px,4vw,52px)}
 .site-nav{gap:18px}
 .nav-cta{min-width:auto;padding:0 24px;color:#111!important;background:#8fd3ff!important;font-size:1rem!important;white-space:nowrap}
@@ -37,6 +36,14 @@ h1{font-size:clamp(3.4rem,6.3vw,6.4rem);line-height:.95;max-width:760px;margin-b
 #coffee-types .section-heading{margin-bottom:34px!important}
 .coffee-section{background:#eaf7ff}
 .gallery-caption{background:rgba(17,17,17,.76)}
+.gallery-caption p{font-size:0!important}
+.gallery-caption p::before{display:block;font-size:1rem;line-height:1.5;color:inherit}
+.photo-storefront .gallery-caption p::before{content:"A welcoming neighbourhood café in the heart of Acton."}
+.photo-latte-menu .gallery-caption p::before{content:"Relax with freshly made coffee in a warm, comfortable setting."}
+.photo-iced-drink .gallery-caption p::before{content:"Refreshing iced coffees, fresh juices and signature drinks made to order."}
+.photo-service .gallery-caption p::before{content:"Friendly faces, genuine service and a warm welcome every time you visit."}
+.photo-cake .gallery-caption p::before{content:"Treat yourself to cakes, desserts and something sweet with your coffee."}
+.photo-breakfast .gallery-caption p::before{content:"Fresh breakfasts and generous brunches, served every day."}
 
 #reviews blockquote{position:relative!important;padding:42px!important;display:flex!important;flex-direction:column!important;justify-content:center!important;min-height:250px!important}
 #reviews blockquote:before{content:"★★★★★";display:block;color:#2589c8;font-family:Inter,sans-serif;font-size:1rem;letter-spacing:.16em;margin-bottom:20px}
@@ -95,6 +102,7 @@ h1{font-size:clamp(3.4rem,6.3vw,6.4rem);line-height:.95;max-width:760px;margin-b
   #about .section-copy>p{margin-bottom:20px!important}
   #about .feature-grid{gap:14px!important}
   #about .feature-grid article{padding:22px!important}
+  .gallery-caption p::before{font-size:.92rem;line-height:1.45}
   #reviews blockquote{padding:28px!important;min-height:220px!important}
   #reviews .review-panel{padding:26px!important}
   #reviews .review-panel h2{font-size:clamp(2.35rem,12vw,3.35rem)!important}
