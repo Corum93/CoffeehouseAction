@@ -1,15 +1,17 @@
 :root{
-  --coffee:#8fd3ff;
-  --espresso:#111111;
-  --caramel:#5bbcf2;
-  --gold:#cfeeff;
-  --latte:#eaf7ff;
+  --coffee:#5594b1;
+  --espresso:#5b3826;
+  --caramel:#477f99;
+  --gold:#dcebf2;
+  --latte:#eef6f9;
+  --brand-blue:#5594b1;
+  --coffee-heading:#5b3826;
 }
 .cookie-settings-trigger{display:none!important}
 .site-header{padding:14px clamp(20px,4vw,52px)}
 .site-nav{gap:18px}
-.nav-cta{min-width:auto;padding:0 24px;color:#111!important;background:#8fd3ff!important;font-size:1rem!important;white-space:nowrap}
-.hero{min-height:calc(100vh - 76px);padding-top:70px;padding-bottom:70px;background:linear-gradient(135deg,#fff,#dff3ff)}
+.nav-cta{min-width:auto;padding:0 24px;color:#fff!important;background:#5594b1!important;font-size:1rem!important;white-space:nowrap}
+.hero{min-height:calc(100vh - 76px);padding-top:70px;padding-bottom:70px;background:linear-gradient(135deg,#fff,#e4f0f5)}
 .hero{grid-template-columns:minmax(0,1fr) minmax(360px,.72fr);align-items:center}
 .hero.section-pad{padding-bottom:28px!important}
 h1{font-size:clamp(3.4rem,6.3vw,6.4rem);line-height:.95;max-width:760px;margin-bottom:22px}
@@ -19,11 +21,32 @@ h1{font-size:clamp(3.4rem,6.3vw,6.4rem);line-height:.95;max-width:760px;margin-b
 .rating-score{width:76px;height:76px;font-size:1.9rem;border-radius:22px}
 .hero-image-card{min-height:330px}
 
+/* Approved brand colours: exact supplied blue with warm coffee headings */
+html body h1,
+html body h2,
+html body h3,
+html body .brand strong,
+html body .menu-card h3,
+html body .coffee-card h3,
+html body .feature-grid h3,
+html body .hours-card h3{color:#5b3826!important}
+html body #about h2::after,
+html body .visit-card h2,
+html body #reviews .review-panel h2,
+html body #reviews blockquote p::before{color:#5b3826!important}
+html body .eyebrow{color:#477f99!important}
+html body .button.primary,
+html body .nav-cta,
+html body .rating-score{background:#5594b1!important;color:#fff!important}
+html body #reviews.section-pad{background:linear-gradient(135deg,#6aa6c2,#5594b1)!important}
+html body .coffee-section{background:#eef6f9!important}
+html body .button.secondary{background:#e7f1f5!important;color:#5b3826!important}
+
 #about.section-pad{padding-top:40px!important;padding-bottom:52px!important;grid-template-columns:minmax(0,.82fr) minmax(0,1.18fr)!important;gap:clamp(42px,5vw,76px)!important;align-items:center!important}
 #about>div:first-child{align-self:center!important;max-width:660px!important}
 #about .eyebrow{margin-bottom:20px!important}
 #about h2{font-size:0!important;margin-bottom:0!important}
-#about h2::after{content:"A cosy cafe for proper food, friendly service, everyday moments and getting a little work done.";display:block;font-size:clamp(2.75rem,4.15vw,4.15rem);line-height:1.02;letter-spacing:-.04em;color:#111;max-width:650px}
+#about h2::after{content:"A cosy cafe for proper food, friendly service, everyday moments and getting a little work done.";display:block;font-size:clamp(2.75rem,4.15vw,4.15rem);line-height:1.02;letter-spacing:-.04em;color:#5b3826;max-width:650px}
 #about .section-copy{align-self:center!important;padding-top:4px!important}
 #about .section-copy>p{max-width:760px!important;margin-bottom:26px!important;font-size:1.03rem!important;line-height:1.65!important}
 #about .feature-grid{margin-top:0!important;gap:20px!important;align-items:stretch!important}
@@ -35,7 +58,7 @@ h1{font-size:clamp(3.4rem,6.3vw,6.4rem);line-height:.95;max-width:760px;margin-b
 #menu .section-heading{margin-bottom:30px!important}
 #coffee-types.section-pad{padding-top:54px!important}
 #coffee-types .section-heading{margin-bottom:34px!important}
-.coffee-section{background:#eaf7ff}
+.coffee-section{background:#eef6f9}
 .gallery-caption{background:rgba(17,17,17,.76)}
 .gallery-caption p{font-size:0!important}
 .gallery-caption p::before{display:block;font-size:1rem;line-height:1.5;color:inherit}
@@ -47,9 +70,9 @@ h1{font-size:clamp(3.4rem,6.3vw,6.4rem);line-height:.95;max-width:760px;margin-b
 .photo-breakfast .gallery-caption p::before{content:"Fresh breakfasts and generous brunches, served every day."}
 
 #reviews blockquote{position:relative!important;padding:42px!important;display:flex!important;flex-direction:column!important;justify-content:center!important;min-height:250px!important}
-#reviews blockquote:before{content:"★★★★★";display:block;color:#2589c8;font-family:Inter,sans-serif;font-size:1rem;letter-spacing:.16em;margin-bottom:20px}
+#reviews blockquote:before{content:"★★★★★";display:block;color:#5594b1;font-family:Inter,sans-serif;font-size:1rem;letter-spacing:.16em;margin-bottom:20px}
 #reviews blockquote p{font-size:0!important;margin-bottom:20px!important}
-#reviews blockquote p:before{display:block;font-family:"Playfair Display",Georgia,serif;font-size:clamp(1.8rem,2.7vw,2.65rem);line-height:1.14;letter-spacing:-.025em;color:#111}
+#reviews blockquote p:before{display:block;font-family:"Playfair Display",Georgia,serif;font-size:clamp(1.8rem,2.7vw,2.65rem);line-height:1.14;letter-spacing:-.025em;color:#5b3826}
 #reviews blockquote:first-child p:before{content:"The food was made with so much love."}
 #reviews blockquote:nth-child(2) p:before{content:"Excellent food and service, friendly staff, great portions and everything fresh."}
 #reviews blockquote cite{font-size:0!important;color:#555!important}
@@ -61,7 +84,7 @@ h1{font-size:clamp(3.4rem,6.3vw,6.4rem);line-height:.95;max-width:760px;margin-b
 #reviews .review-panel h2{font-size:clamp(3rem,5vw,5.2rem)!important;line-height:.98!important;max-width:760px!important;margin-bottom:22px!important}
 #reviews .review-panel>p:not(.eyebrow){font-size:1.08rem!important;max-width:780px!important;margin-bottom:0!important}
 #reviews .review-actions{display:flex!important;flex-wrap:wrap!important;gap:16px!important;margin-top:26px!important}
-#reviews .review-actions::before{content:"★★★★★  4.8 / 5  ·  Based on 32 Tripadvisor reviews\A Freshly made daily  •  Family-run café  •  Acton High Street  •  Open every day";display:block;width:100%;white-space:pre-wrap;padding:20px 22px;margin-bottom:8px;border:1px solid rgba(17,17,17,.10);border-radius:20px;background:#eaf7ff;color:#111;font-size:1rem;font-weight:800;line-height:1.8;box-shadow:0 12px 30px rgba(17,17,17,.06)}
+#reviews .review-actions::before{content:"★★★★★  4.8 / 5  ·  Based on 32 Tripadvisor reviews\A Freshly made daily  •  Family-run café  •  Acton High Street  •  Open every day";display:block;width:100%;white-space:pre-wrap;padding:20px 22px;margin-bottom:8px;border:1px solid rgba(17,17,17,.10);border-radius:20px;background:#eef6f9;color:#111;font-size:1rem;font-weight:800;line-height:1.8;box-shadow:0 12px 30px rgba(17,17,17,.06)}
 #reviews .review-actions .button{min-height:50px!important}
 
 #visit.section-pad{padding-top:56px!important;padding-bottom:72px!important;background:linear-gradient(180deg,#fff,#f4f9fc)!important}
@@ -69,20 +92,27 @@ h1{font-size:clamp(3.4rem,6.3vw,6.4rem);line-height:.95;max-width:760px;margin-b
 .visit-card,.hours-card{padding:clamp(34px,4.4vw,62px)!important;background:#fff!important;border:1px solid rgba(17,17,17,.10)!important;box-shadow:0 18px 46px rgba(17,17,17,.08)!important}
 .visit-card{display:flex!important;flex-direction:column!important;justify-content:center!important}
 .visit-card .eyebrow{display:flex!important;align-items:center!important;gap:10px!important;margin-bottom:22px!important}
-.visit-card .eyebrow:before{content:"";width:11px;height:11px;border-radius:50%;background:#8fd3ff;box-shadow:0 0 0 5px rgba(143,211,255,.22)}
-.visit-card h2{font-size:clamp(2.8rem,4.7vw,4.8rem)!important;line-height:1.02!important;letter-spacing:-.045em!important;max-width:760px!important;margin-bottom:26px!important;color:#111!important}
+.visit-card .eyebrow:before{content:"";width:11px;height:11px;border-radius:50%;background:#5594b1;box-shadow:0 0 0 5px rgba(85,148,177,.22)}
+.visit-card h2{font-size:clamp(2.8rem,4.7vw,4.8rem)!important;line-height:1.02!important;letter-spacing:-.045em!important;max-width:760px!important;margin-bottom:26px!important;color:#5b3826!important}
 .visit-card>p:not(.eyebrow){font-size:1.08rem!important;color:#555!important;margin-bottom:0!important;padding-bottom:24px!important;border-bottom:1px solid rgba(17,17,17,.10)!important}
 .visit-actions{gap:22px!important;margin-top:26px!important}
 .visit-actions .button{min-height:52px!important;padding:0 26px!important}
-.hours-card h3{font-size:1.55rem!important;color:#111!important;margin-bottom:28px!important}
+.hours-card h3{font-size:1.55rem!important;color:#5b3826!important;margin-bottom:28px!important}
 .hours-card div{padding:16px 0!important;border-bottom:1px solid rgba(17,17,17,.10)!important}
-.hours-card dt{color:#5bbcf2!important;font-size:1.02rem!important}
+.hours-card dt{color:#5594b1!important;font-size:1.02rem!important}
 .hours-card dd{color:#555!important;font-variant-numeric:tabular-nums!important;letter-spacing:.01em!important}
 
 /* Social brand buttons */
 a.button[href*="instagram.com"]{background:linear-gradient(135deg,#833ab4,#fd1d1d,#fcb045)!important;color:#fff!important;border-color:transparent!important;box-shadow:0 12px 28px rgba(225,48,108,.24)!important}
 a.button[href*="tiktok.com"]{background:#111!important;color:#fff!important;border-color:#25f4ee!important;box-shadow:6px 6px 0 rgba(254,44,85,.82),-3px -3px 0 rgba(37,244,238,.72)!important}
 a.button[href*="instagram.com"]:hover,a.button[href*="tiktok.com"]:hover{transform:translateY(-2px)!important;filter:brightness(1.05)}
+
+/* Other business promotion */
+.other-business-banner{display:flex;align-items:center;justify-content:space-between;gap:22px;padding:22px clamp(20px,5vw,72px);background:#5594b1;color:#fff}
+.other-business-banner p{margin:0;font-size:1rem;font-weight:700}
+.other-business-banner strong{font-family:"Playfair Display",Georgia,serif;font-size:1.35rem;color:#fff}
+.other-business-banner a{display:inline-flex;align-items:center;justify-content:center;min-height:46px;padding:0 22px;border-radius:999px;background:#fff;color:#5b3826;font-weight:800;text-decoration:none;white-space:nowrap}
+.other-business-banner a:hover{transform:translateY(-2px);box-shadow:0 12px 28px rgba(0,0,0,.16)}
 
 @media(max-width:900px){
   .nav-cta{width:100%}
@@ -129,6 +159,8 @@ a.button[href*="instagram.com"]:hover,a.button[href*="tiktok.com"]:hover{transfo
   .hours-card h3{font-size:1.35rem!important;margin-bottom:20px!important}
   .hours-card div{padding:14px 0!important}
   a.button[href*="tiktok.com"]{box-shadow:4px 4px 0 rgba(254,44,85,.75),-2px -2px 0 rgba(37,244,238,.68)!important}
+  .other-business-banner{flex-direction:column;align-items:flex-start;padding:20px 16px}
+  .other-business-banner a{width:100%}
 }
 
 .cookie-floating-settings{min-height:36px!important;padding:0 11px!important;font-size:.82rem!important;right:16px!important;bottom:16px!important}
