@@ -127,7 +127,7 @@ p { color: var(--muted); line-height: 1.72; }
 .gallery-placeholder { height: 100%; min-height: 280px; padding: 28px; display: flex; flex-direction: column; justify-content: flex-end; background: linear-gradient(145deg, rgba(31,19,13,0.25), rgba(31,19,13,0.85)), radial-gradient(circle at top left, #edbf7f, #835834 60%, #2b1a12); }
 .gallery-placeholder span { color: var(--cream); font-size: 1.5rem; font-weight: 800; margin-bottom: 10px; }
 .gallery-placeholder p { color: rgba(255,248,237,0.9); margin-bottom: 0; }
-.gallery-cta { display: flex; justify-content: center; margin-top: 28px; }
+.gallery-cta { display: flex; flex-wrap: wrap; justify-content: center; gap: 18px; margin-top: 28px; }
 
 .reviews-section { display: grid; grid-template-columns: 1fr 0.85fr; gap: 24px; align-items: stretch; background: linear-gradient(135deg, var(--coffee), var(--espresso)); }
 .reviews-section h2, .reviews-section .review-panel p:not(.eyebrow) { color: var(--cream); }
