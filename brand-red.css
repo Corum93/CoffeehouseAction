@@ -79,6 +79,11 @@ h1{font-size:clamp(3.4rem,6.3vw,6.4rem);line-height:.95;max-width:760px;margin-b
 .hours-card dt{color:#5bbcf2!important;font-size:1.02rem!important}
 .hours-card dd{color:#555!important;font-variant-numeric:tabular-nums!important;letter-spacing:.01em!important}
 
+/* Social brand buttons */
+a.button[href*="instagram.com"]{background:linear-gradient(135deg,#833ab4,#fd1d1d,#fcb045)!important;color:#fff!important;border-color:transparent!important;box-shadow:0 12px 28px rgba(225,48,108,.24)!important}
+a.button[href*="tiktok.com"]{background:#111!important;color:#fff!important;border-color:#25f4ee!important;box-shadow:6px 6px 0 rgba(254,44,85,.82),-3px -3px 0 rgba(37,244,238,.72)!important}
+a.button[href*="instagram.com"]:hover,a.button[href*="tiktok.com"]:hover{transform:translateY(-2px)!important;filter:brightness(1.05)}
+
 @media(max-width:900px){
   .nav-cta{width:100%}
   .hero{padding-top:56px;padding-bottom:56px;grid-template-columns:1fr}
@@ -94,6 +99,8 @@ h1{font-size:clamp(3.4rem,6.3vw,6.4rem);line-height:.95;max-width:760px;margin-b
   #reviews .review-panel h2{font-size:clamp(2.8rem,8vw,4.4rem)!important}
   .visit-section{grid-template-columns:1fr!important}
   .visit-card h2{font-size:clamp(2.7rem,8vw,4.2rem)!important}
+  .hero-actions{display:grid!important;grid-template-columns:1fr!important;gap:12px!important}
+  .hero-actions .button{width:100%!important}
 }
 
 @media(max-width:640px){
@@ -104,10 +111,16 @@ h1{font-size:clamp(3.4rem,6.3vw,6.4rem);line-height:.95;max-width:760px;margin-b
   #about .feature-grid{gap:14px!important}
   #about .feature-grid article{padding:22px!important}
   .gallery-caption p::before{font-size:.92rem;line-height:1.45}
-  #reviews blockquote{padding:28px!important;min-height:220px!important}
-  #reviews .review-panel{padding:26px!important}
-  #reviews .review-panel h2{font-size:clamp(2.35rem,12vw,3.35rem)!important}
-  #reviews .review-actions::before{padding:16px 17px;font-size:.92rem;line-height:1.65}
+  #reviews.section-pad{padding-left:12px!important;padding-right:12px!important}
+  #reviews .review-panel{padding:24px 20px!important;border-radius:24px!important}
+  #reviews .review-panel .eyebrow{margin-bottom:12px!important}
+  #reviews .review-panel h2{font-size:clamp(2.45rem,11vw,3.2rem)!important;line-height:1!important;letter-spacing:-.045em!important;margin-bottom:18px!important}
+  #reviews .review-panel>p:not(.eyebrow){font-size:1rem!important;line-height:1.55!important;margin-bottom:0!important}
+  #reviews .review-actions{gap:12px!important;margin-top:20px!important}
+  #reviews .review-actions::before{padding:15px 16px!important;font-size:.86rem!important;line-height:1.55!important;border-radius:16px!important;margin-bottom:2px!important}
+  #reviews .review-actions .button{width:100%!important;min-height:48px!important;padding:0 16px!important;font-size:.95rem!important}
+  #reviews blockquote{padding:24px!important;min-height:0!important}
+  #reviews blockquote p:before{font-size:1.55rem!important;line-height:1.18!important}
   #visit.section-pad{padding-top:38px!important;padding-bottom:48px!important}
   .visit-card,.hours-card{padding:26px!important}
   .visit-card h2{font-size:clamp(2.35rem,12vw,3.35rem)!important;line-height:1.04!important}
@@ -115,6 +128,7 @@ h1{font-size:clamp(3.4rem,6.3vw,6.4rem);line-height:.95;max-width:760px;margin-b
   .visit-actions .button{width:100%!important}
   .hours-card h3{font-size:1.35rem!important;margin-bottom:20px!important}
   .hours-card div{padding:14px 0!important}
+  a.button[href*="tiktok.com"]{box-shadow:4px 4px 0 rgba(254,44,85,.75),-2px -2px 0 rgba(37,244,238,.68)!important}
 }
 
 .cookie-floating-settings{min-height:36px!important;padding:0 11px!important;font-size:.82rem!important;right:16px!important;bottom:16px!important}
