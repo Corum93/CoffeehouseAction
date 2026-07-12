@@ -12,6 +12,45 @@ if(navToggle&&siteNav){
   }));
 }
 
+function addRefurbishmentBanner(){
+  if(document.querySelector('.refurbishment-banner'))return;
+  const header=document.querySelector('.site-header');
+  if(!header)return;
+
+  const banner=document.createElement('aside');
+  banner.className='refurbishment-banner';
+  banner.setAttribute('aria-label','Refurbishment update');
+  banner.innerHTML=`<span aria-hidden="true">🚧</span><p><strong>Exciting changes are underway!</strong> The Toll House Acton Coffee is currently being refurbished and will reopen with a fresh new look. <a href="https://www.instagram.com/THECOFFEEHOUSEACTON/" target="_blank" rel="noopener">Follow us on Instagram</a> for updates and behind-the-scenes progress.</p>`;
+  header.parentNode.insertBefore(banner,header);
+
+  const style=document.createElement('style');
+  style.id='refurbishment-banner-styles';
+  style.textContent=`
+    .refurbishment-banner{
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
+      width:100%;
+      padding:11px clamp(18px,4vw,56px);
+      background:#5594b1;
+      color:#fff;
+      font-family:"Poppins",Arial,sans-serif;
+      text-align:center;
+      box-sizing:border-box;
+    }
+    .refurbishment-banner p{margin:0!important;color:#fff!important;font-size:.9rem;line-height:1.5!important}
+    .refurbishment-banner strong{font-weight:700}
+    .refurbishment-banner a{color:#fff!important;font-weight:700;text-decoration:underline;text-underline-offset:3px}
+    .refurbishment-banner>span{flex:0 0 auto}
+    @media(max-width:640px){
+      .refurbishment-banner{align-items:flex-start;padding:10px 14px;text-align:left;gap:8px}
+      .refurbishment-banner p{font-size:.78rem!important;line-height:1.45!important}
+    }
+  `;
+  document.head.appendChild(style);
+}
+
 function updateHeaderBranding(){
   const brand=document.querySelector('.brand');
   const title=brand?.querySelector('strong');
@@ -26,8 +65,9 @@ function updateHeaderBranding(){
     .brand>span{display:flex!important;flex-direction:column!important;justify-content:center!important;align-items:flex-start!important;gap:4px!important;min-width:0!important}
     .brand strong{display:block!important;font-family:Georgia,"Times New Roman",serif!important;font-size:1.08rem!important;font-weight:400!important;line-height:1!important;letter-spacing:.07em!important;text-transform:uppercase!important;color:#5b3826!important;white-space:nowrap!important}
     .brand small{display:block!important;visibility:visible!important;opacity:1!important;position:static!important;width:auto!important;height:auto!important;overflow:visible!important;clip:auto!important;clip-path:none!important;font-family:"Poppins",Arial,sans-serif!important;font-size:.62rem!important;font-weight:500!important;line-height:1.15!important;letter-spacing:.16em!important;text-transform:uppercase!important;color:#5b3826!important;white-space:nowrap!important}
-    .nav-toggle{display:grid!important;place-content:center!important;gap:6px!important;padding:0!important}
+    .nav-toggle{display:none!important;place-content:center!important;gap:6px!important;padding:0!important}
     .nav-toggle span{display:block!important;position:static!important;inset:auto!important;width:22px!important;height:2px!important;margin:0!important;transform:none!important;border-radius:999px!important;background:#fff!important}
+    @media(max-width:900px){.nav-toggle{display:grid!important}}
     @media(max-width:640px){.brand{min-width:0!important;gap:10px!important}.brand>span{gap:3px!important;overflow:visible!important}.brand strong{font-size:.88rem!important;letter-spacing:.045em!important}.brand small{font-size:.48rem!important;letter-spacing:.105em!important}.nav-toggle{width:44px!important;height:44px!important;flex:0 0 44px!important}.nav-toggle span{width:21px!important;height:2px!important}}
     @media(max-width:390px){.brand strong{font-size:.82rem!important}.brand small{font-size:.44rem!important;letter-spacing:.085em!important}}
   `;
@@ -71,10 +111,7 @@ function updateGalleryCopy(){
   if(document.getElementById('gallery-copy-styles'))return;
   const style=document.createElement('style');
   style.id='gallery-copy-styles';
-  style.textContent=`
-    #gallery .gallery-intro{max-width:760px;margin:18px auto 0;color:#4f4f4f;font-size:1.05rem;line-height:1.65;text-align:center}
-    @media(max-width:640px){#gallery .gallery-intro{margin-top:14px;font-size:.96rem;line-height:1.55;text-align:left}}
-  `;
+  style.textContent=`#gallery .gallery-intro{max-width:760px;margin:18px auto 0;color:#4f4f4f;font-size:1.05rem;line-height:1.65;text-align:center}@media(max-width:640px){#gallery .gallery-intro{margin-top:14px;font-size:.96rem;line-height:1.55;text-align:left}}`;
   document.head.appendChild(style);
 }
 
@@ -143,21 +180,25 @@ function createCookieConsent(){
   document.querySelector('.cookie-settings-trigger')?.remove();
   document.querySelector('.cookie-banner')?.remove();
   if(document.querySelector('.cookie-floating-settings'))return;
+
   const style=document.createElement('style');
   style.id='cookie-consent-styles';
   style.textContent=`.cookie-consent-banner{position:fixed;left:24px;right:24px;bottom:24px;z-index:9999;max-width:980px;margin:0 auto;padding:22px;border:1px solid rgba(85,148,177,.22);border-radius:26px;background:#fff;box-shadow:0 24px 80px rgba(31,19,13,.22);color:#2a211b;display:grid;grid-template-columns:1fr auto;gap:20px;align-items:center}.cookie-consent-banner[hidden],.cookie-settings-panel[hidden]{display:none!important}.cookie-consent-banner h2,.cookie-settings-panel h2{margin:0 0 8px;font-family:Poppins,Arial,sans-serif;font-size:1.1rem;color:#5b3826}.cookie-consent-banner p,.cookie-settings-panel p{margin:0;color:#5f524d;line-height:1.55;font-size:.96rem}.cookie-actions{display:flex;flex-wrap:wrap;gap:10px;justify-content:flex-end}.cookie-btn{min-height:42px;padding:0 15px;border:1px solid rgba(85,148,177,.26);border-radius:999px;background:#eef6f9;color:#5b3826;font:inherit;font-weight:600;cursor:pointer}.cookie-btn.primary{background:#5594b1;color:#fff;border-color:#5594b1}.cookie-btn.dark{background:#5b3826;color:#fff;border-color:#5b3826}.cookie-settings-panel{position:fixed;inset:0;z-index:10000;display:grid;place-items:center;padding:20px;background:rgba(31,19,13,.58)}.cookie-settings-card{width:min(720px,100%);max-height:92vh;overflow:auto;padding:24px;border-radius:28px;background:#fff;box-shadow:0 24px 90px rgba(31,19,13,.34)}.cookie-option{display:flex;justify-content:space-between;gap:18px;padding:18px 0;border-top:1px solid rgba(85,148,177,.18)}.cookie-option strong{display:block;margin-bottom:6px;color:#5b3826}.cookie-option small{display:block;color:#5f524d;line-height:1.5}.cookie-toggle{width:54px;height:30px;flex:0 0 54px;appearance:none;border-radius:999px;background:#d8c8bd;position:relative;cursor:pointer;border:0}.cookie-toggle::after{content:'';position:absolute;width:24px;height:24px;top:3px;left:3px;border-radius:50%;background:#fff;transition:transform .18s ease;box-shadow:0 2px 8px rgba(31,19,13,.18)}.cookie-toggle:checked{background:#5594b1}.cookie-toggle:checked::after{transform:translateX(24px)}.cookie-toggle:disabled{opacity:.7;cursor:not-allowed}.cookie-floating-settings{position:fixed;right:16px;bottom:16px;z-index:9998;min-height:36px;padding:0 11px;border:1px solid rgba(85,148,177,.22);border-radius:999px;background:#fff;color:#5b3826;font:inherit;font-size:.82rem;font-weight:600;box-shadow:0 14px 40px rgba(31,19,13,.16);cursor:pointer}@media(max-width:720px){.cookie-consent-banner{left:12px;right:12px;bottom:12px;grid-template-columns:1fr;padding:18px}.cookie-actions{justify-content:stretch}.cookie-btn{width:100%}.cookie-settings-card{padding:20px;border-radius:22px}.cookie-floating-settings{right:12px;bottom:12px;min-height:34px;padding:0 10px;font-size:.78rem}}`;
   document.head.appendChild(style);
+
   const existingConsent=getCookieConsent();
   const settingsButton=document.createElement('button');
   settingsButton.className='cookie-floating-settings';
   settingsButton.type='button';
   settingsButton.textContent='Cookie Settings';
   document.body.appendChild(settingsButton);
+
   const banner=document.createElement('section');
   banner.className='cookie-consent-banner';
   banner.setAttribute('aria-label','Cookie consent');
   banner.innerHTML=`<div><h2>Cookies on The Toll House Acton</h2><p>We use necessary cookies to make this website work. With your permission, we may also use optional cookies to understand visits and improve the site.</p></div><div class="cookie-actions"><button class="cookie-btn" type="button" data-cookie-action="necessary">Necessary only</button><button class="cookie-btn dark" type="button" data-cookie-action="settings">Cookie settings</button><button class="cookie-btn primary" type="button" data-cookie-action="all">Accept all</button></div>`;
   document.body.appendChild(banner);
+
   const panel=document.createElement('div');
   panel.className='cookie-settings-panel';
   panel.hidden=true;
@@ -165,11 +206,13 @@ function createCookieConsent(){
   panel.setAttribute('aria-modal','true');
   panel.innerHTML=`<div class="cookie-settings-card"><h2>Cookie settings</h2><p>Choose which optional cookies you are happy for us to use.</p><div class="cookie-option"><span><strong>Necessary cookies</strong><small>Required for basic website functions.</small></span><input class="cookie-toggle" type="checkbox" checked disabled /></div><div class="cookie-option"><span><strong>Analytics cookies</strong><small>Help us understand how people use the website.</small></span><input class="cookie-toggle" type="checkbox" data-cookie-toggle="analytics" /></div><div class="cookie-option"><span><strong>Marketing cookies</strong><small>Support social media and promotional features.</small></span><input class="cookie-toggle" type="checkbox" data-cookie-toggle="marketing" /></div><div class="cookie-actions" style="margin-top:18px"><button class="cookie-btn" type="button" data-cookie-action="close">Cancel</button><button class="cookie-btn dark" type="button" data-cookie-action="necessary">Necessary only</button><button class="cookie-btn primary" type="button" data-cookie-action="save">Save choices</button></div></div>`;
   document.body.appendChild(panel);
+
   const analyticsToggle=panel.querySelector('[data-cookie-toggle="analytics"]');
   const marketingToggle=panel.querySelector('[data-cookie-toggle="marketing"]');
   const openSettings=()=>{const current=getCookieConsent();analyticsToggle.checked=Boolean(current?.analytics);marketingToggle.checked=Boolean(current?.marketing);panel.hidden=false;};
   const closeSettings=()=>{panel.hidden=true;};
   const saveAndClose=settings=>{saveCookieConsent(settings);banner.hidden=true;closeSettings();};
+
   settingsButton.addEventListener('click',openSettings);
   banner.addEventListener('click',event=>{
     const action=event.target?.dataset?.cookieAction;
@@ -187,6 +230,7 @@ function createCookieConsent(){
 
 function initialisePageEnhancements(){
   applyChelseaTypography();
+  addRefurbishmentBanner();
   updateHeaderBranding();
   updateGalleryCopy();
   addCoffeeMenuSubtitle();
