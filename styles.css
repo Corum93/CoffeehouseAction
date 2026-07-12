@@ -170,3 +170,9 @@ blockquote cite { color: var(--muted); font-style: normal; font-weight: 700; }
   .gallery-card--wide { grid-column: span 1; }
   .hours-card div, .site-footer { flex-direction: column; }
 }
+
+/* The hamburger menu belongs on tablet and mobile only. */
+html body .site-header .nav-toggle { display: none !important; }
+@media (max-width: 900px) {
+  html body .site-header .nav-toggle { display: grid !important; }
+}
