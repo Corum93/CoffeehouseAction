@@ -32,9 +32,9 @@ function updateHeaderBranding(){
         gap:2px;
       }
       .brand strong{
-        font-family:"Playfair Display",Georgia,serif!important;
+        font-family:Georgia,"Times New Roman",serif!important;
         font-size:1.08rem!important;
-        font-weight:600!important;
+        font-weight:400!important;
         line-height:1!important;
         letter-spacing:.07em!important;
         text-transform:uppercase!important;
@@ -42,9 +42,9 @@ function updateHeaderBranding(){
         white-space:nowrap;
       }
       .brand small{
-        font-family:Inter,system-ui,sans-serif!important;
+        font-family:"Poppins",Arial,sans-serif!important;
         font-size:.62rem!important;
-        font-weight:600!important;
+        font-weight:500!important;
         line-height:1.15!important;
         letter-spacing:.16em!important;
         text-transform:uppercase!important;
@@ -58,6 +58,70 @@ function updateHeaderBranding(){
     `;
     document.head.appendChild(style);
   }
+}
+
+function applyChelseaTypography(){
+  if(!document.querySelector('link[data-chelsea-font]')){
+    const font=document.createElement('link');
+    font.rel='stylesheet';
+    font.href='https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap';
+    font.dataset.chelseaFont='true';
+    document.head.appendChild(font);
+  }
+  if(document.getElementById('chelsea-typography-styles'))return;
+  const style=document.createElement('style');
+  style.id='chelsea-typography-styles';
+  style.textContent=`
+    html body,
+    html body p,
+    html body a,
+    html body button,
+    html body input,
+    html body label,
+    html body dt,
+    html body dd,
+    html body cite,
+    html body small,
+    html body .button,
+    html body .site-nav a,
+    html body .gallery-caption,
+    html body .coffee-menu-note{
+      font-family:"Poppins",Arial,sans-serif!important;
+    }
+    html body h1,
+    html body h2,
+    html body #about h2::after,
+    html body #reviews blockquote p::before,
+    html body .visit-card h2{
+      font-family:"Poppins",Arial,sans-serif!important;
+      font-weight:300!important;
+      letter-spacing:-.035em!important;
+    }
+    html body h3,
+    html body .menu-card h3,
+    html body .coffee-card h3,
+    html body .feature-grid h3,
+    html body .hours-card h3{
+      font-family:"Poppins",Arial,sans-serif!important;
+      font-weight:500!important;
+      letter-spacing:-.015em!important;
+    }
+    html body .eyebrow{
+      font-family:"Poppins",Arial,sans-serif!important;
+      font-weight:600!important;
+      letter-spacing:.15em!important;
+    }
+    html body .button,
+    html body .nav-cta{font-weight:600!important}
+    @media(max-width:640px){
+      html body h1,
+      html body h2,
+      html body #about h2::after,
+      html body #reviews blockquote p::before,
+      html body .visit-card h2{letter-spacing:-.03em!important}
+    }
+  `;
+  document.head.appendChild(style);
 }
 
 function addCoffeeMenuSubtitle(){
@@ -146,7 +210,7 @@ function createCookieConsent(){
 
   const style=document.createElement('style');
   style.id='cookie-consent-styles';
-  style.textContent=`.cookie-consent-banner{position:fixed;left:24px;right:24px;bottom:24px;z-index:9999;max-width:980px;margin:0 auto;padding:22px;border:1px solid rgba(85,148,177,.22);border-radius:26px;background:#fff;box-shadow:0 24px 80px rgba(31,19,13,.22);color:#2a211b;display:grid;grid-template-columns:1fr auto;gap:20px;align-items:center}.cookie-consent-banner[hidden],.cookie-settings-panel[hidden]{display:none!important}.cookie-consent-banner h2,.cookie-settings-panel h2{margin:0 0 8px;font-family:Inter,system-ui,sans-serif;font-size:1.1rem;color:#5b3826}.cookie-consent-banner p,.cookie-settings-panel p{margin:0;color:#5f524d;line-height:1.55;font-size:.96rem}.cookie-actions{display:flex;flex-wrap:wrap;gap:10px;justify-content:flex-end}.cookie-btn{min-height:42px;padding:0 15px;border:1px solid rgba(85,148,177,.26);border-radius:999px;background:#eef6f9;color:#5b3826;font:inherit;font-weight:800;cursor:pointer}.cookie-btn.primary{background:#5594b1;color:#fff;border-color:#5594b1}.cookie-btn.dark{background:#5b3826;color:#fff;border-color:#5b3826}.cookie-settings-panel{position:fixed;inset:0;z-index:10000;display:grid;place-items:center;padding:20px;background:rgba(31,19,13,.58)}.cookie-settings-card{width:min(720px,100%);max-height:92vh;overflow:auto;padding:24px;border-radius:28px;background:#fff;box-shadow:0 24px 90px rgba(31,19,13,.34)}.cookie-option{display:flex;justify-content:space-between;gap:18px;padding:18px 0;border-top:1px solid rgba(85,148,177,.18)}.cookie-option strong{display:block;margin-bottom:6px;color:#5b3826}.cookie-option small{display:block;color:#5f524d;line-height:1.5}.cookie-toggle{width:54px;height:30px;flex:0 0 54px;appearance:none;border-radius:999px;background:#d8c8bd;position:relative;cursor:pointer;border:0}.cookie-toggle::after{content:'';position:absolute;width:24px;height:24px;top:3px;left:3px;border-radius:50%;background:#fff;transition:transform .18s ease;box-shadow:0 2px 8px rgba(31,19,13,.18)}.cookie-toggle:checked{background:#5594b1}.cookie-toggle:checked::after{transform:translateX(24px)}.cookie-toggle:disabled{opacity:.7;cursor:not-allowed}.cookie-floating-settings{position:fixed;right:16px;bottom:16px;z-index:9998;min-height:36px;padding:0 11px;border:1px solid rgba(85,148,177,.22);border-radius:999px;background:#fff;color:#5b3826;font:inherit;font-size:.82rem;font-weight:800;box-shadow:0 14px 40px rgba(31,19,13,.16);cursor:pointer}@media(max-width:720px){.cookie-consent-banner{left:12px;right:12px;bottom:12px;grid-template-columns:1fr;padding:18px}.cookie-actions{justify-content:stretch}.cookie-btn{width:100%}.cookie-settings-card{padding:20px;border-radius:22px}.cookie-floating-settings{right:12px;bottom:12px;min-height:34px;padding:0 10px;font-size:.78rem}}`;
+  style.textContent=`.cookie-consent-banner{position:fixed;left:24px;right:24px;bottom:24px;z-index:9999;max-width:980px;margin:0 auto;padding:22px;border:1px solid rgba(85,148,177,.22);border-radius:26px;background:#fff;box-shadow:0 24px 80px rgba(31,19,13,.22);color:#2a211b;display:grid;grid-template-columns:1fr auto;gap:20px;align-items:center}.cookie-consent-banner[hidden],.cookie-settings-panel[hidden]{display:none!important}.cookie-consent-banner h2,.cookie-settings-panel h2{margin:0 0 8px;font-family:Poppins,Arial,sans-serif;font-size:1.1rem;color:#5b3826}.cookie-consent-banner p,.cookie-settings-panel p{margin:0;color:#5f524d;line-height:1.55;font-size:.96rem}.cookie-actions{display:flex;flex-wrap:wrap;gap:10px;justify-content:flex-end}.cookie-btn{min-height:42px;padding:0 15px;border:1px solid rgba(85,148,177,.26);border-radius:999px;background:#eef6f9;color:#5b3826;font:inherit;font-weight:600;cursor:pointer}.cookie-btn.primary{background:#5594b1;color:#fff;border-color:#5594b1}.cookie-btn.dark{background:#5b3826;color:#fff;border-color:#5b3826}.cookie-settings-panel{position:fixed;inset:0;z-index:10000;display:grid;place-items:center;padding:20px;background:rgba(31,19,13,.58)}.cookie-settings-card{width:min(720px,100%);max-height:92vh;overflow:auto;padding:24px;border-radius:28px;background:#fff;box-shadow:0 24px 90px rgba(31,19,13,.34)}.cookie-option{display:flex;justify-content:space-between;gap:18px;padding:18px 0;border-top:1px solid rgba(85,148,177,.18)}.cookie-option strong{display:block;margin-bottom:6px;color:#5b3826}.cookie-option small{display:block;color:#5f524d;line-height:1.5}.cookie-toggle{width:54px;height:30px;flex:0 0 54px;appearance:none;border-radius:999px;background:#d8c8bd;position:relative;cursor:pointer;border:0}.cookie-toggle::after{content:'';position:absolute;width:24px;height:24px;top:3px;left:3px;border-radius:50%;background:#fff;transition:transform .18s ease;box-shadow:0 2px 8px rgba(31,19,13,.18)}.cookie-toggle:checked{background:#5594b1}.cookie-toggle:checked::after{transform:translateX(24px)}.cookie-toggle:disabled{opacity:.7;cursor:not-allowed}.cookie-floating-settings{position:fixed;right:16px;bottom:16px;z-index:9998;min-height:36px;padding:0 11px;border:1px solid rgba(85,148,177,.22);border-radius:999px;background:#fff;color:#5b3826;font:inherit;font-size:.82rem;font-weight:600;box-shadow:0 14px 40px rgba(31,19,13,.16);cursor:pointer}@media(max-width:720px){.cookie-consent-banner{left:12px;right:12px;bottom:12px;grid-template-columns:1fr;padding:18px}.cookie-actions{justify-content:stretch}.cookie-btn{width:100%}.cookie-settings-card{padding:20px;border-radius:22px}.cookie-floating-settings{right:12px;bottom:12px;min-height:34px;padding:0 10px;font-size:.78rem}}`;
   document.head.appendChild(style);
 
   const existingConsent=getCookieConsent();
@@ -192,6 +256,7 @@ function createCookieConsent(){
 }
 
 function initialisePageEnhancements(){
+  applyChelseaTypography();
   updateHeaderBranding();
   addCoffeeMenuSubtitle();
   addOtherBusinessBanner();
