@@ -12,6 +12,54 @@ if(navToggle&&siteNav){
   }));
 }
 
+function updateHeaderBranding(){
+  const brand=document.querySelector('.brand');
+  const title=brand?.querySelector('strong');
+  const subtitle=brand?.querySelector('small');
+  if(!brand||!title||!subtitle)return;
+
+  title.textContent='THE TOLL HOUSE';
+  subtitle.textContent='ACTON COFFEE HOUSE';
+
+  if(!document.getElementById('toll-house-header-brand-styles')){
+    const style=document.createElement('style');
+    style.id='toll-house-header-brand-styles';
+    style.textContent=`
+      .brand>span{
+        display:flex;
+        flex-direction:column;
+        justify-content:center;
+        gap:2px;
+      }
+      .brand strong{
+        font-family:"Playfair Display",Georgia,serif!important;
+        font-size:1.08rem!important;
+        font-weight:600!important;
+        line-height:1!important;
+        letter-spacing:.07em!important;
+        text-transform:uppercase!important;
+        color:#5b3826!important;
+        white-space:nowrap;
+      }
+      .brand small{
+        font-family:Inter,system-ui,sans-serif!important;
+        font-size:.62rem!important;
+        font-weight:600!important;
+        line-height:1.15!important;
+        letter-spacing:.16em!important;
+        text-transform:uppercase!important;
+        color:#5b3826!important;
+        white-space:nowrap;
+      }
+      @media(max-width:640px){
+        .brand strong{font-size:.94rem!important;letter-spacing:.055em!important}
+        .brand small{font-size:.53rem!important;letter-spacing:.12em!important}
+      }
+    `;
+    document.head.appendChild(style);
+  }
+}
+
 function addCoffeeMenuSubtitle(){
   const heading=document.querySelector('#coffee-types .section-heading');
   if(!heading||heading.querySelector('.coffee-menu-note'))return;
@@ -144,6 +192,7 @@ function createCookieConsent(){
 }
 
 function initialisePageEnhancements(){
+  updateHeaderBranding();
   addCoffeeMenuSubtitle();
   addOtherBusinessBanner();
   addGoogleReviewsButton();
