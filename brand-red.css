@@ -101,6 +101,17 @@ html body .button.secondary{background:#e7f1f5!important;color:#5b3826!important
 .hours-card div{padding:16px 0!important;border-bottom:1px solid rgba(17,17,17,.10)!important}
 .hours-card dt{color:#5594b1!important;font-size:1.02rem!important}
 .hours-card dd{color:#555!important;font-variant-numeric:tabular-nums!important;letter-spacing:.01em!important}
+.hours-card::after{
+  content:"Opening hours may be updated ahead of our reopening. Please check back for the latest information.";
+  display:block;
+  margin-top:22px;
+  padding-top:18px;
+  border-top:1px solid rgba(17,17,17,.10);
+  color:#6b625d;
+  font-family:"Poppins",Arial,sans-serif;
+  font-size:.92rem;
+  line-height:1.55;
+}
 
 /* Social brand buttons */
 a.button[href*="instagram.com"]{background:linear-gradient(135deg,#833ab4,#fd1d1d,#fcb045)!important;color:#fff!important;border-color:transparent!important;box-shadow:0 12px 28px rgba(225,48,108,.24)!important}
@@ -160,6 +171,7 @@ a.button[href*="instagram.com"]:hover,a.button[href*="tiktok.com"]:hover{transfo
   .visit-actions .button{width:100%!important}
   .hours-card h3{font-size:1.35rem!important;margin-bottom:20px!important}
   .hours-card div{padding:14px 0!important}
+  .hours-card::after{margin-top:18px;padding-top:16px;font-size:.84rem;line-height:1.5}
   a.button[href*="tiktok.com"]{box-shadow:4px 4px 0 rgba(254,44,85,.75),-2px -2px 0 rgba(37,244,238,.68)!important}
   .other-business-banner{flex-direction:column;align-items:flex-start;padding:20px 16px}
   .other-business-banner a{width:100%}
