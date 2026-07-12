@@ -21,43 +21,79 @@ function updateHeaderBranding(){
   title.textContent='THE TOLL HOUSE';
   subtitle.textContent='ACTON COFFEE HOUSE';
 
-  if(!document.getElementById('toll-house-header-brand-styles')){
-    const style=document.createElement('style');
-    style.id='toll-house-header-brand-styles';
-    style.textContent=`
-      .brand>span{
-        display:flex;
-        flex-direction:column;
-        justify-content:center;
-        gap:2px;
-      }
-      .brand strong{
-        font-family:Georgia,"Times New Roman",serif!important;
-        font-size:1.08rem!important;
-        font-weight:400!important;
-        line-height:1!important;
-        letter-spacing:.07em!important;
-        text-transform:uppercase!important;
-        color:#5b3826!important;
-        white-space:nowrap;
-      }
-      .brand small{
-        font-family:"Poppins",Arial,sans-serif!important;
-        font-size:.62rem!important;
-        font-weight:500!important;
-        line-height:1.15!important;
-        letter-spacing:.16em!important;
-        text-transform:uppercase!important;
-        color:#5b3826!important;
-        white-space:nowrap;
-      }
-      @media(max-width:640px){
-        .brand strong{font-size:.94rem!important;letter-spacing:.055em!important}
-        .brand small{font-size:.53rem!important;letter-spacing:.12em!important}
-      }
-    `;
-    document.head.appendChild(style);
-  }
+  if(document.getElementById('toll-house-header-brand-styles'))return;
+  const style=document.createElement('style');
+  style.id='toll-house-header-brand-styles';
+  style.textContent=`
+    .brand>span{
+      display:flex!important;
+      flex-direction:column!important;
+      justify-content:center!important;
+      align-items:flex-start!important;
+      gap:4px!important;
+      min-width:0!important;
+    }
+    .brand strong{
+      display:block!important;
+      font-family:Georgia,"Times New Roman",serif!important;
+      font-size:1.08rem!important;
+      font-weight:400!important;
+      line-height:1!important;
+      letter-spacing:.07em!important;
+      text-transform:uppercase!important;
+      color:#5b3826!important;
+      white-space:nowrap!important;
+    }
+    .brand small{
+      display:block!important;
+      visibility:visible!important;
+      opacity:1!important;
+      position:static!important;
+      width:auto!important;
+      height:auto!important;
+      overflow:visible!important;
+      clip:auto!important;
+      clip-path:none!important;
+      font-family:"Poppins",Arial,sans-serif!important;
+      font-size:.62rem!important;
+      font-weight:500!important;
+      line-height:1.15!important;
+      letter-spacing:.16em!important;
+      text-transform:uppercase!important;
+      color:#5b3826!important;
+      white-space:nowrap!important;
+    }
+    .nav-toggle{
+      display:grid!important;
+      place-content:center!important;
+      gap:6px!important;
+      padding:0!important;
+    }
+    .nav-toggle span{
+      display:block!important;
+      position:static!important;
+      inset:auto!important;
+      width:22px!important;
+      height:2px!important;
+      margin:0!important;
+      transform:none!important;
+      border-radius:999px!important;
+      background:#fff!important;
+    }
+    @media(max-width:640px){
+      .brand{min-width:0!important;gap:10px!important}
+      .brand>span{gap:3px!important;overflow:visible!important}
+      .brand strong{font-size:.88rem!important;letter-spacing:.045em!important}
+      .brand small{font-size:.48rem!important;letter-spacing:.105em!important}
+      .nav-toggle{width:44px!important;height:44px!important;flex:0 0 44px!important}
+      .nav-toggle span{width:21px!important;height:2px!important}
+    }
+    @media(max-width:390px){
+      .brand strong{font-size:.82rem!important}
+      .brand small{font-size:.44rem!important;letter-spacing:.085em!important}
+    }
+  `;
+  document.head.appendChild(style);
 }
 
 function applyChelseaTypography(){
@@ -72,36 +108,19 @@ function applyChelseaTypography(){
   const style=document.createElement('style');
   style.id='chelsea-typography-styles';
   style.textContent=`
-    html body,
-    html body p,
-    html body a,
-    html body button,
-    html body input,
-    html body label,
-    html body dt,
-    html body dd,
-    html body cite,
-    html body small,
-    html body .button,
-    html body .site-nav a,
-    html body .gallery-caption,
-    html body .coffee-menu-note{
+    html body,html body p,html body a,html body button,html body input,html body label,
+    html body dt,html body dd,html body cite,html body small,html body .button,
+    html body .site-nav a,html body .gallery-caption,html body .coffee-menu-note{
       font-family:"Poppins",Arial,sans-serif!important;
     }
-    html body h1,
-    html body h2,
-    html body #about h2::after,
-    html body #reviews blockquote p::before,
-    html body .visit-card h2{
+    html body h1,html body h2,html body #about h2::after,
+    html body #reviews blockquote p::before,html body .visit-card h2{
       font-family:"Poppins",Arial,sans-serif!important;
       font-weight:300!important;
       letter-spacing:-.035em!important;
     }
-    html body h3,
-    html body .menu-card h3,
-    html body .coffee-card h3,
-    html body .feature-grid h3,
-    html body .hours-card h3{
+    html body h3,html body .menu-card h3,html body .coffee-card h3,
+    html body .feature-grid h3,html body .hours-card h3{
       font-family:"Poppins",Arial,sans-serif!important;
       font-weight:500!important;
       letter-spacing:-.015em!important;
@@ -111,14 +130,12 @@ function applyChelseaTypography(){
       font-weight:600!important;
       letter-spacing:.15em!important;
     }
-    html body .button,
-    html body .nav-cta{font-weight:600!important}
+    html body .button,html body .nav-cta{font-weight:600!important}
     @media(max-width:640px){
-      html body h1,
-      html body h2,
-      html body #about h2::after,
-      html body #reviews blockquote p::before,
-      html body .visit-card h2{letter-spacing:-.03em!important}
+      html body h1,html body h2,html body #about h2::after,
+      html body #reviews blockquote p::before,html body .visit-card h2{
+        letter-spacing:-.03em!important;
+      }
     }
   `;
   document.head.appendChild(style);
@@ -131,28 +148,11 @@ function addCoffeeMenuSubtitle(){
   note.className='coffee-menu-note';
   note.textContent='Explore a selection of our favourites, with more drinks available in store.';
   heading.appendChild(note);
-
-  if(!document.getElementById('coffee-menu-note-styles')){
-    const style=document.createElement('style');
-    style.id='coffee-menu-note-styles';
-    style.textContent=`
-      .coffee-menu-note{
-        max-width:680px;
-        margin:18px auto 0;
-        color:#4f4f4f;
-        font-size:1.05rem;
-        line-height:1.6;
-      }
-      @media(max-width:640px){
-        .coffee-menu-note{
-          margin-top:14px;
-          font-size:.98rem;
-          line-height:1.55;
-        }
-      }
-    `;
-    document.head.appendChild(style);
-  }
+  if(document.getElementById('coffee-menu-note-styles'))return;
+  const style=document.createElement('style');
+  style.id='coffee-menu-note-styles';
+  style.textContent=`.coffee-menu-note{max-width:680px;margin:18px auto 0;color:#4f4f4f;font-size:1.05rem;line-height:1.6}@media(max-width:640px){.coffee-menu-note{margin-top:14px;font-size:.98rem;line-height:1.55}}`;
+  document.head.appendChild(style);
 }
 
 function addOtherBusinessBanner(){
@@ -187,12 +187,11 @@ function addGoogleMap(){
   mapCard.className='google-map-card';
   mapCard.innerHTML=`<iframe title="Map showing The Toll House Acton" src="https://www.google.com/maps?q=135%20High%20Street%2C%20Acton%2C%20London%20W3%206LY&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>`;
   visitSection.appendChild(mapCard);
-  if(!document.getElementById('google-map-styles')){
-    const style=document.createElement('style');
-    style.id='google-map-styles';
-    style.textContent=`.google-map-card{grid-column:1/-1;width:100%;min-width:0;overflow:hidden;border:1px solid rgba(17,17,17,.10);border-radius:26px;background:#fff;box-shadow:0 18px 46px rgba(17,17,17,.08)}.google-map-card iframe{display:block;width:100%;height:420px;border:0}@media(max-width:640px){.google-map-card{border-radius:22px}.google-map-card iframe{height:320px}}`;
-    document.head.appendChild(style);
-  }
+  if(document.getElementById('google-map-styles'))return;
+  const style=document.createElement('style');
+  style.id='google-map-styles';
+  style.textContent=`.google-map-card{grid-column:1/-1;width:100%;min-width:0;overflow:hidden;border:1px solid rgba(17,17,17,.10);border-radius:26px;background:#fff;box-shadow:0 18px 46px rgba(17,17,17,.08)}.google-map-card iframe{display:block;width:100%;height:420px;border:0}@media(max-width:640px){.google-map-card{border-radius:22px}.google-map-card iframe{height:320px}}`;
+  document.head.appendChild(style);
 }
 
 function removeRedundantGoogleMapsButton(){
